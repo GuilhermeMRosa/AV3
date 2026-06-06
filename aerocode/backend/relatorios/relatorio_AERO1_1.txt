@@ -1,0 +1,43 @@
+============================================================
+        AEROCODE — RELATÓRIO DE ENTREGA
+============================================================
+
+Relatório Nº:    1
+Cliente:         Cassio
+Data de Entrega: 05/06/2026
+Emitido em:      05/06/2026
+
+------------------------------------------------------------
+AERONAVE
+------------------------------------------------------------
+Código:          AERO1
+Modelo:          AERONAVE 1
+Tipo:            COMERCIAL
+Capacidade:      99 passageiros
+Alcance:         2000 km
+
+------------------------------------------------------------
+ETAPAS DE PRODUÇÃO
+------------------------------------------------------------
+1. etapa 1
+   Prazo:  12/06/2026
+   Status: CONCLUIDA
+2. etapa 1
+   Prazo:  26/06/2026
+   Status: CONCLUIDA
+   Equipe: Guilherme engenheiro (ENGENHEIRO), Guilherme Operador (OPERADOR)
+
+------------------------------------------------------------
+PEÇAS UTILIZADAS
+------------------------------------------------------------
+Nenhuma peça registrada.
+
+------------------------------------------------------------
+RESULTADOS DE TESTES
+------------------------------------------------------------
+• ELETRICO: REPROVADO
+• AERODINAMICO: REPROVADO
+
+============================================================
+Documento gerado automaticamente pelo sistema Aerocode.
+============================================================

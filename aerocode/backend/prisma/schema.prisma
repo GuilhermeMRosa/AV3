@@ -1,0 +1,106 @@
+generator client{
+    provider = "prisma-client-js"
+}
+
+datasource db{
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+enum TipoAeronave{
+    COMERCIAL
+    MILITAR
+}
+
+enum TipoPeca{
+    NACIONAL
+    IMPORTADA
+}
+
+enum StatusPeca{
+    EM_PRODUCAO
+    EM_TRANSPORTE
+    PRONTA
+}
+
+enum StatusEtapa{
+    PENDENTE
+    ANDAMENTO
+    CONCLUIDA
+}
+
+enum NivelPermissao{
+    ADMINISTRADOR
+    ENGENHEIRO
+    OPERADOR
+}
+enum TipoTeste{
+    ELETRICO
+    HIDRAULICO
+    AERODINAMICO
+}
+
+enum ResultadoTeste{
+    APROVADO
+    REPROVADO
+}
+
+model Aeronave{
+    id Int @id @default(autoincrement())
+    codigo String @unique
+    relatorio Relatorio?
+    modelo String
+    tipo TipoAeronave
+    capacidade Float
+    alcance Float
+    pecas Peca[]
+    etapas Etapa[]
+    testes Teste[]
+}
+
+model Peca{
+    id Int @id @default(autoincrement())
+    aeronave Aeronave @relation(fields: [aeronaveId], references: [id])
+    aeronaveId Int
+    nome String 
+    tipo TipoPeca
+    fornecedor String
+    status StatusPeca
+}
+
+model Etapa{
+    id Int @id @default(autoincrement())
+    funcionarios Funcionario[]
+    aeronave Aeronave @relation(fields: [aeronaveId], references: [id])
+    aeronaveId Int
+    nome String 
+    prazo DateTime
+    status StatusEtapa
+}
+
+model Funcionario{
+    id Int @id @default(autoincrement())
+    etapas Etapa[]
+    nome String
+    telefone String
+    endereco String
+    usuario String @unique
+    senha String
+    nivel NivelPermissao
+}
+
+model Teste{
+    id Int @id @default(autoincrement())
+    aeronave Aeronave @relation(fields: [aeronaveId], references: [id])
+    aeronaveId Int
+    tipo TipoTeste 
+    resultado ResultadoTeste
+}
+
+model Relatorio{
+    id Int @id @default(autoincrement())
+    aeronave Aeronave @relation(fields: [aeronaveId], references: [id])
+    aeronaveId Int @unique
+    nomeCliente String
+    dataEntrega DateTime
+}
