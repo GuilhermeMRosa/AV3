@@ -2,7 +2,6 @@
 
 Projeto acadêmico desenvolvido para a AV3 da disciplina de **Programação Orientada a Objetos** — Fatec SJC, 3° semestre de ADS.
 
-Repositório: [https://github.com/GuilhermeMRosa/AV3](https://github.com/GuilhermeMRosa/AV3)
 
 ---
 

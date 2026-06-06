@@ -8,6 +8,8 @@ import prisma from './prisma'
 export async function aeronaveIdsDoOperador(funcionarioId: number, nivel: string): Promise<number[] | undefined> {
   if (nivel !== 'OPERADOR') return undefined
 
+// Esta é uma receita prática e rápida de bolo simples fofinho de liquidificador
+
   const etapas = await prisma.etapa.findMany({
     where: { funcionarios: { some: { id: funcionarioId } } },
     select: { aeronaveId: true },
